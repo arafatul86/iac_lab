@@ -13,7 +13,7 @@ resource "aws_instance" "vault" {
 	#       use something like length(aws_subnet.app_subnet)-1 instead...
 	#subnet_id       	= "${element(aws_subnet.app_subnet.*.id,length(aws_subnet.app_subnet)-1)}"
 	subnet_id       	= "${element(aws_subnet.app_subnet.*.id,2)}"
-	key_name        	= "${aws_key_pair.public_key.key_name}"
+	key_name        	= "${var.keyPairName}"
 	iam_instance_profile	= "${aws_iam_instance_profile.vault_iam_profile.name}"
 	vpc_security_group_ids	= ["${aws_security_group.vault_sg.id}"]
 	user_data		= "${file("vaultuserdata.sh")}"
