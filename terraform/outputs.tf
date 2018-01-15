@@ -5,9 +5,9 @@ output "BASTION_IP" {
 	value = "${aws_instance.bastion.public_ip}"
 }
 
-output "KEYFILE" {
-	value = "${var.publicSshKey}"
-}
+#output "KEYFILE" {
+#	value = "${var.publicSshKey}"
+#}
 
 output "VAULT_IP" {
 	value = "${aws_instance.vault.private_ip}"
