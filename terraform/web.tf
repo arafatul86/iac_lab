@@ -82,7 +82,7 @@ resource "aws_launch_configuration" "web_lc" {
 	instance_type		= "${var.webInstanceType}"
 	iam_instance_profile = "${aws_iam_instance_profile.web_profile.name}"
 	user_data			= "${file("webuserdata.sh")}"
-	key_name			= "${aws_key_pair.public_key.key_name}"
+	key_name			= "${var.keyPairName}"
 	lifecycle {
 		create_before_destroy = true
 	}
