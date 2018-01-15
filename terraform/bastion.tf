@@ -21,7 +21,7 @@ resource "aws_instance" "bastion" {
    ami             = "${var.webAmi}"
    instance_type   = "t2.micro"
    subnet_id       = "${data.aws_subnet_ids.default_subnets.ids[0]}"
-   key_name        = "${aws_key_pair.public_key.key_name}"
+   key_name        = "${var.keyPairName}"
    vpc_security_group_ids = ["${aws_security_group.bastion_sg.id}"]
 
    tags {
