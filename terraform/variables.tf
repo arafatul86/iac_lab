@@ -33,8 +33,7 @@ variable "webAmi" {
 variable "webInstanceType" {
 	default = "t2.micro"
 }
-variable "publicSshKey" {
-	default = "./ssh/id_rsa.pub"
+variable "keyPairName" {
 }
 
 # Autoscaling Group
