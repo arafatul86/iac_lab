@@ -21,7 +21,7 @@ yum -y install httpd mod_wsgi jq gcc python-pip mysql-devel python-devel git
 # put the web code in place
 cd /tmp
 rm -rf /var/www/html/* /tmp/iac_lab
-git clone http://github.com/peterb154/iac_lab
+git clone http://github.com/chrismatteson/iac_lab
 mv /tmp/iac_lab/iacapp/* /var/www/html
 pip install -r /var/www/html/requirements.txt
 rm -rf /tmp/iac_lab
